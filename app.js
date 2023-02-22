@@ -132,7 +132,20 @@ window.addEventListener("DOMContentLoaded", function() {
 // 종류 필터
 filterBtns.forEach(function(btn) {
 	btn.addEventListener('click', function(e){
-		console.log(e.currentTarget.dataset);
+		const category = e.currentTarget.dataset.id;
+		const menuCategory = menu.filter(function(menuItem){
+			// console.log(menuItem.category);
+			if (menuItem.category === category) {
+				return menuItem;
+			}
+		});
+		// console.log(menuCategory);
+		if (category === "모든메뉴") {
+			displayMenuItems(menu);
+		}
+		else {
+			displayMenuItems(menuCategory);
+		}
 	});
 });
 
