@@ -77,7 +77,7 @@ const menu = [
     category: "돈카츠",
     price: 11500,
     img: "https://ldb-phinf.pstatic.net/20221014_30/1665708036044fxpRH_JPEG/pIaa4B-nuQSgRYO_5HJFPGyICeyxXwIN0-ZA56s3Jq8%3D.jpg",
-    desc: `치즈가 듬뿍 들어간 치즈카츠 메뉴입니다.`,
+    desc: `치즈가 듬뿍 들어간 모짜 치즈 돈카츠 메뉴입니다.`,
   },
   {
     id: 11,
@@ -93,7 +93,7 @@ const menu = [
     category: "음료/주류",
     price: 2000,
     img: "https://ecimg.cafe24img.com/pg182b97702823022/serveonepm/web/product/big/20230106/26081_26.jpg",
-    desc: `시원한 펩시콜라 입니다.`,
+    desc: `시원한 펩시콜라 입니다......................................`,
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ const menu = [
     category: "음료/주류",
     price: 2500,
     img: "https://blog.kakaocdn.net/dn/xoPWP/btq0fkdg4ym/UYPQkmiCDFM8e2xLVEtXpk/img.jpg",
-    desc: `설탕을 줄인 제로콜라 입니다.`,
+    desc: `설탕을 줄인 제로콜라 입니다..................................`,
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ const menu = [
     category: "음료/주류",
     price: 7000,
     img: "https://img.seoul.co.kr//img/upload/2021/08/24/SSI_20210824221902.jpg",
-    desc: `시원한 하이볼 입니다.`,
+    desc: `시원한 하이볼 입니다........................................`,
   },
   {
     id: 14,
@@ -117,7 +117,7 @@ const menu = [
     category: "사이드",
     price: 4000,
     img: "https://ldb-phinf.pstatic.net/20221014_298/1665708036031n5S37_JPEG/m000268_a02_1280.jpg",
-    desc: `왕새우튀김 2개 입니다.`,
+    desc: `왕새우튀김 2개 입니다........................................`,
   },
   {
     id: 15,
@@ -125,7 +125,7 @@ const menu = [
     category: "사이드",
     price: 7500,
     img: "https://ldb-phinf.pstatic.net/20221014_298/1665708036031n5S37_JPEG/m000268_a02_1280.jpg",
-    desc: `왕새우튀김 4개 입니다.`,
+    desc: `왕새우튀김 4개 입니다.......................................`,
   },
   {
     id: 16,
@@ -145,39 +145,37 @@ const menu = [
   },
 ];
 
-const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const sectionCenter = $('.section-center');
+const filterBtns = $('.filter-btn');
 
 // 메뉴 로드
-window.addEventListener("DOMContentLoaded", function() {
-	displayMenuItems(menu);
+$(document).ready(function() {
+    displayMenuItems(menu);
 });
 
 // 종류 필터
-filterBtns.forEach(function(btn) {
-	btn.addEventListener('click', function(e){
-		const category = e.currentTarget.dataset.id;
-		const menuCategory = menu.filter(function(menuItem){
-			// console.log(menuItem.category);
-			if (menuItem.category === category) {
-				return menuItem;
-			}
-		});
-		// console.log(menuCategory);
-		if (category === "모든메뉴") {
-			displayMenuItems(menu);
-		}
-		else {
-			displayMenuItems(menuCategory);
-		}
-	});
+filterBtns.each(function() {
+    $(this).on('click', function(e) {
+        const category = $(e.currentTarget).data('id');
+        const menuCategory = menu.filter(function(menuItem) {
+            // console.log(menuItem.category);
+            if (menuItem.category === category) {
+                return menuItem;
+            }
+        });
+        // console.log(menuCategory);
+        if (category === "모든메뉴") {
+            displayMenuItems(menu);
+        } else {
+            displayMenuItems(menuCategory);
+        }
+    });
 });
 
 function displayMenuItems(menuItems) {
-	let displayMenu = menuItems.map(function(item) {
-		// console.log(item);
-		
-		return `<article class="menu-item">
+    let displayMenu = menuItems.map(function(item) {
+        // console.log(item);
+        return `<article class="menu-item">
 				<img src=${item.img} class="photo" alt=${item.title}/>
 				<div class="item-info">
 					<header>
@@ -193,7 +191,6 @@ function displayMenuItems(menuItems) {
 					</p>
 				</div>
 			</article>`;
-    });
-	displayMenu = displayMenu.join("");
-	sectionCenter.innerHTML = displayMenu;
+    }).join("");
+    sectionCenter.html(displayMenu);
 }
