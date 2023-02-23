@@ -8,6 +8,7 @@
 // });
 
 const questions = document.querySelectorAll(".question");
+const previous = document.querySelector(".previous-btn")
 
 questions.forEach(function (question) {
 	const btn = question.querySelector(".question-btn");
@@ -19,4 +20,9 @@ questions.forEach(function (question) {
 		})
 		question.classList.toggle("show-text");
 	});
+});
+
+
+previous.addEventListener("click", function() {
+	window.history.back();
 });

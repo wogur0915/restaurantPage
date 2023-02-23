@@ -247,3 +247,13 @@ Questions
 .show-text .plus-icon {
   display: none;
 }
+
+.previous-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: var(--clr-gold);
+  transition: var(--transition);
+  margin-left:500px;
+}
