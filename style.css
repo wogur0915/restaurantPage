@@ -259,6 +259,8 @@ Menu
   .filter-btn {
   	font-size: 0.7rem;
 	font-weight:bold;
+	margin-right:4px;
+	margin-left:4px;  
   }
   .btn-container {
     margin-bottom: 22px;
@@ -280,4 +282,6 @@ Menu
 
 .faq {
 	margin-bottom: 80px;
+	font-family: 'Jua', sans-serif;
+	font-size:1.2rem;
 }
