@@ -255,5 +255,14 @@ Questions
   cursor: pointer;
   color: var(--clr-gold);
   transition: var(--transition);
-  margin-left:500px;
+  margin-left:0px;
+}
+
+@media screen and (max-width: 767px) {
+  .previous-btn {
+    margin-left: 10px;
+  }
+  h2 {
+	margin-bottom:0px;	
+  }
 }

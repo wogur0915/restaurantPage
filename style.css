@@ -203,6 +203,7 @@ Menu
   color: var(--clr-gold);
   cursor: pointer;
   transition: var(--transition);
+  font-weight:bold;
 }
 .filter-btn:hover {
   background: var(--clr-gold);
@@ -253,6 +254,20 @@ Menu
     height: 175px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .filter-btn {
+  	font-size: 0.7rem;
+	font-weight:bold;
+  }
+  .btn-container {
+    margin-bottom: 22px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+}
+	
 @media screen and (min-width: 1200px) {
   .section-center {
     width: 95vw;
