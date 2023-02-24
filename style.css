@@ -283,5 +283,6 @@ Menu
 .faq {
 	margin-bottom: 80px;
 	font-family: 'Jua', sans-serif;
-	font-size:1.2rem;
+	font-size:1.4rem;
+	color:red;
 }
