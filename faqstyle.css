@@ -258,11 +258,19 @@ Questions
   margin-left:0px;
 }
 
+#map {
+	margin: 0 auto;
+}
+
 @media screen and (max-width: 767px) {
   .previous-btn {
     margin-left: 10px;
   }
   h2 {
-	margin-bottom:0px;	
+    margin-bottom: 0px;
+  }
+  #map {
+    max-width: 300px;
+    max-height: 250px;
   }
 }
