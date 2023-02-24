@@ -260,6 +260,10 @@ Questions
 
 #map {
 	margin: 0 auto;
+	object-fit: cover;
+    height: 200px;
+    border: 0.25rem solid var(--clr-gold);
+    border-radius: var(--radius);
 }
 
 @media screen and (max-width: 767px) {
